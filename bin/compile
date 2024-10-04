@@ -60,7 +60,7 @@ for PROJECT_FILE in "${PROJECT_ARRAY[@]}"; do
     echo "Publishing project: $PROJECT_FILE"
     
     # Yayınlama işlemi
-    dotnet publish "$PROJECT_FILE" --output "${BUILD_DIR}/${OUTPUT_DIR}/$(basename "${PROJECT_FILE%.*}")" --configuration "${BUILD_CONFIGURATION}" --runtime linux-x64 --self-contained
+    dotnet publish "$PROJECT_FILE" --output "${BUILD_DIR}/${OUTPUT_DIR}/$(basename "${PROJECT_FILE%.*}")" --configuration "${BUILD_CONFIGURATION}" --runtime linux-x64
 done
 
 # Sadece Program.cs içeren projeyi bulma
@@ -85,4 +85,4 @@ echo "Creating Procfile for project: $PROJECT_NAME"
 echo "web: cd \$HOME/${OUTPUT_DIR}/$PROJECT_NAME && ./$PROJECT_NAME" > ${BUILD_DIR}/Procfile
 
 # Ek bilgi
-echo "All projects published successfully. The project with Program.cs is set to run."
+ec
